@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MIS Outing 2026</title>
+<style>
+  body { margin: 0; padding: 20px; background: #f4f4f4; }
+  .ew { font-family: Arial, sans-serif; background: #fff; max-width: 660px; margin: 0 auto; color: #1a1a1a; padding: 20px; }
+  .section-block { margin-bottom: 28px; }
+  .section-header { display: flex; align-items: center; gap: 12px; border-radius: 10px; padding: 14px 18px; margin-bottom: 14px; }
+  .section-icon { font-size: 22px; }
+  .section-title { font-size: 20px; font-weight: 700; color: #fff; margin: 0; }
+  .section-sub { font-size: 12px; color: rgba(255,255,255,0.75); margin: 2px 0 0; }
+  .group-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+  .gc { border: 2px solid; border-radius: 10px; overflow: hidden; }
+  .gh { display: flex; align-items: center; gap: 8px; padding: 10px 12px; }
+  .gn { width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; flex-shrink: 0; }
+  .gb { padding: 8px 12px 12px; display: flex; flex-direction: column; gap: 5px; background: #fff; }
+  .mr { font-size: 12.5px; color: #1a1a1a; }
+  .role { font-size: 11px; color: #666; }
+  .bh { font-size: 10px; font-weight: 700; padding: 1px 6px; border-radius: 4px; background: #d4f0e4; color: #075e3a; }
+  .sw { border: 2px solid #bbb; border-radius: 10px; padding: 12px 14px; margin-top: 12px; background: #f9f9f9; }
+  .sw-label { font-size: 12px; font-weight: 700; color: #555; letter-spacing: 1px; text-transform: uppercase; margin: 0 0 8px; }
+  .pills { display: flex; flex-wrap: wrap; gap: 6px; }
+  .pill { font-size: 12px; background: #e4e4e4; color: #333; padding: 3px 10px; border-radius: 20px; border: 1px solid #ccc; }
+  .car-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 10px; }
+  .car-card { border: 2px solid; border-radius: 10px; overflow: hidden; }
+  .car-card.normal { border-color: #378ADD; }
+  .car-card.unavail { border-color: #bbb; }
+  .car-head { padding: 8px 12px; display: flex; align-items: center; gap: 8px; }
+  .car-head.normal { background: #deeef9; }
+  .car-head.unavail { background: #f0f0f0; }
+  .car-num { width: 26px; height: 26px; border-radius: 50%; font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: #fff; }
+  .car-num.normal { background: #378ADD; }
+  .car-num.unavail { background: #999; }
+  .car-driver { font-size: 13px; font-weight: 700; line-height: 1.3; }
+  .car-driver.normal { color: #185FA5; }
+  .car-driver.unavail { color: #777; }
+  .car-sub { font-size: 10px; color: #888; }
+  .car-body { padding: 8px 12px 10px; background: #fff; }
+  .pax-row { font-size: 12px; color: #1a1a1a; padding: 3px 0; border-bottom: 1px solid #eee; display: flex; align-items: center; gap: 6px; }
+  .pax-row:last-child { border-bottom: none; }
+  .pax-follow { font-size: 12px; color: #888; font-style: italic; padding: 3px 0; }
+  .solo-tag { font-size: 11px; color: #aaa; font-style: italic; }
+  .unavail-tag { font-size: 11px; color: #c0392b; font-weight: 700; }
+  .rz { margin-bottom: 14px; }
+  .rzt { font-size: 13px; font-weight: 700; padding: 6px 12px; border-radius: 8px; margin-bottom: 8px; display: inline-block; }
+  .rg { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 8px; }
+  .rc { border: 2px solid; border-radius: 10px; overflow: hidden; }
+  .rh { padding: 6px 10px; font-size: 11px; font-weight: 700; display: flex; align-items: center; gap: 6px; }
+  .rn { width: 20px; height: 20px; border-radius: 50%; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .rb { padding: 6px 10px 10px; background: #fff; display: flex; flex-direction: column; gap: 3px; }
+  .rm { font-size: 12.5px; color: #1a1a1a; }
+  .rt { font-size: 10px; color: #888; }
+  .tl { display: flex; flex-direction: column; }
+  .tlr { display: flex; gap: 14px; align-items: stretch; }
+  .tll { display: flex; flex-direction: column; align-items: center; width: 14px; min-width: 14px; }
+  .tld { width: 14px; height: 14px; border-radius: 50%; margin-top: 5px; flex-shrink: 0; border: 2px solid #fff; }
+  .tls { width: 2px; flex: 1; background: #ccc; }
+  .tlc { flex: 1; border: 2px solid; border-radius: 10px; padding: 10px 14px; margin-bottom: 10px; }
+  .tlt { font-size: 11px; font-weight: 700; margin: 0 0 3px; }
+  .tlti { font-size: 14px; font-weight: 700; margin: 0 0 2px; color: #1a1a1a; }
+  .tlsb { font-size: 12px; margin: 2px 0 0; color: #555; }
+  .footer { border-top: 2px solid #e0e0e0; padding-top: 12px; margin-top: 16px; text-align: center; font-size: 12px; color: #888; }
+</style>
+</head>
+<body>
+<div class="ew">
+  <div style="background:#0F6E56;border-radius:12px;padding:22px 24px 18px;margin-bottom:28px;">
+    <p style="font-size:10px;font-weight:700;color:#5DCAA5;letter-spacing:2px;margin:0 0 6px;text-transform:uppercase;">MIS Outing 2026</p>
+    <div style="font-size:24px;font-weight:700;color:#E1F5EE;margin:0 0 6px;">📅 กำหนดการ Outing</div>
+    <p style="font-size:13px;color:#9FE1CB;margin:0;">ขอแจ้งกำหนดการและรายชื่อสมาชิกแต่ละกลุ่มสำหรับกิจกรรม MIS Outing 2026 ที่จะมาถึง</p>
+  </div>
+  <div class="section-block">
+    <div class="section-header" style="background:#0F6E56;"><span class="section-icon">👥</span><div><p class="section-title">รายชื่อสมาชิก</p><p class="section-sub">แบ่งตามกลุ่มกิจกรรม</p></div></div>
+    <div class="group-grid">
+      <div class="gc" style="border-color:#378ADD;"><div class="gh" style="background:#deeef9;"><div class="gn" style="background:#378ADD;color:#fff;">1</div><span style="font-size:14px;font-weight:700;color:#185FA5;">กลุ่มที่ 1</span></div><div class="gb"><div class="mr">พิพัฒน์ <span class="role">Back-End</span></div><div class="mr">คณิศร <span class="role">Commission</span></div><div class="mr">มลทิวา <span class="bh">Head</span></div><div class="mr">Peerayut <span class="role">Font-End</span></div><div class="mr">พี่โบ <span class="bh">Head</span></div><div class="mr">อานนท์ <span class="role">Recovery</span></div></div></div>
+      <div class="gc" style="border-color:#D85A30;"><div class="gh" style="background:#fae8e0;"><div class="gn" style="background:#D85A30;color:#fff;">2</div><span style="font-size:14px;font-weight:700;color:#993C1D;">กลุ่มที่ 2</span></div><div class="gb"><div class="mr">ณัฐภูมิ <span class="role">Recovery</span></div><div class="mr">ดุจเดือน <span class="role">Commission</span></div><div class="mr">สุมิตรา <span class="role">Commission</span></div><div class="mr">อชิรวุฒิ <span class="role">Font-End</span></div><div class="mr">มนธิรา <span class="bh">Head</span></div><div class="mr">บุ๊ค <span class="role">Commission</span></div></div></div>
+      <div class="gc" style="border-color:#3B6D11;"><div class="gh" style="background:#dff0cc;"><div class="gn" style="background:#3B6D11;color:#fff;">3</div><span style="font-size:14px;font-weight:700;color:#3B6D11;">กลุ่มที่ 3</span></div><div class="gb"><div class="mr">Pin-anong <span class="role">Commission</span></div><div class="mr">นิตยาพร <span class="role">Commission</span></div><div class="mr">ศุภณัฐ <span class="role">Font-End ATD</span></div><div class="mr">ภฤศ <span class="role">Font-End Non ATD</span></div><div class="mr">ณัฐชยา <span class="role">Incentive</span></div><div class="mr">TBA น้องใหม่ <span class="role">Back-End</span></div></div></div>
+      <div class="gc" style="border-color:#7F77DD;"><div class="gh" style="background:#e8e7fb;"><div class="gn" style="background:#7F77DD;color:#fff;">4</div><span style="font-size:14px;font-weight:700;color:#3C3489;">กลุ่มที่ 4</span></div><div class="gb"><div class="mr">ธนาธิป <span class="role">Font-End ATD</span></div><div class="mr">สุพัตรา <span class="role">Commission</span></div><div class="mr">กนิษฐา <span class="role">Font-End Assign</span></div><div class="mr">พี่อร <span class="role">Former</span></div><div class="mr">พงศ์ธร <span class="role">Recovery</span></div><div class="mr">Attanai <span class="bh">Head</span></div></div></div>
+    </div>
+    <div class="sw"><p class="sw-label">Staff</p><div class="pills"><span class="pill">อนุวัตร · Back-End</span><span class="pill">ทักษิณ · Incentive</span><span class="pill">กิตติศักดิ์ · Font-End Non ATD</span><span class="pill">ศตพร · Recovery</span><span class="pill">ธวัชชัย · Incentive</span></div></div>
+  </div>
+  <div class="section-block">
+    <div class="section-header" style="background:#185FA5;"><span class="section-icon">🚗</span><div><p class="section-title">การเดินทาง</p><p class="section-sub">ใครไปกับใคร — 15 คัน</p></div></div>
+    <div class="car-grid">
+      <div class="car-card normal"><div class="car-head normal"><div class="car-num normal">1</div><div><div class="car-driver normal">นิตยาพร ขาวผ่อง</div><div class="car-sub">คนขับ</div></div></div><div class="car-body"><div class="pax-row">👤 คณิศร พัฒนาภูมัย</div></div></div>
+      <div class="car-card normal"><div class="car-head normal"><div class="car-num normal">2</div><div><div class="car-driver normal">อานนท์ ศิลานันท์</div><div class="car-sub">คนขับ</div></div></div><div class="car-body"><div class="pax-row">👤 กนิษฐา ชวลิตนิธิกุล</div></div></div>
+      <div class="car-card normal"><div class="car-head normal"><div class="car-num normal">3</div><div><div class="car-driver normal">อัตนัย เลาหพันธ์</div><div class="car-sub">คนขับ</div></div></div><div class="car-body"><div class="pax-row">👤 อชิรวุฒิ นครรัตน์</div><div class="pax-row">👤 ธนาธิป เจ่งสกุล</div><div class="pax-row">👤 ศุภณัฐ สุวรรณชาติ</div></div></div>
+      <div class="car-card normal"><div class="car-head normal"><div class="car-num normal">4</div><div><div class="car-driver normal">กิตติศักดิ์ สุกแก้ว</div><div class="car-sub">คนขับ</div></div></div><div class="car-body"><div class="pax-row">👤 ณัฐชยา เวชสว่าง</div><div class="pax-row">👤 อนุวัตร จันทร์สอน</div><div class="pax-row">👤 ธวัชชัย หงษไกร</div></div></div>
+      <div class="car-card normal"><div class="car-head normal"><div class="car-num normal">5</div><div><div class="car-driver normal">พิพัฒน์ ประเสริฐวงษ์</div><div class="car-sub">คนขับ</div></div></div><div class="car-body"><div class="pax-row">👤 พนาลี ประเสริฐวงษ์</div><div class="pax-row">👤 ดุจเดือน สกุลโชคอุดม</div></div></div>
+      <div class="car-card normal"><div class="car-head normal"><div class="car-num normal">6</div><div><div class="car-driver normal">ปิ่นอนงค์ จูมวงษ์</div><div class="car-sub">คนขับ</div></div></div><div class="car-body"><div class="pax-follow">👥 ผู้ติดตาม</div></div></div>
+      <div class="car-card normal"><div class="car-head normal"><div class="car-num normal">7</div><div><div class="car-driver normal">มลทิวา มริตตนะพร</div><div class="car-sub">คนขับ</div></div></div><div class="car-body"><div class="pax-follow">👥 ผู้ติดตาม</div></div></div>
+      <div class="car-card normal"><div class="car-head normal"><div class="car-num normal">8</div><div><div class="car-driver normal">อรนิต เกตุสุข</div><div class="car-sub">คนขับ</div></div></div><div class="car-body"><div class="pax-follow">👥 ผู้ติดตาม</div></div></div>
+      <div class="car-card normal"><div class="car-head normal"><div class="car-num normal">9</div><div><div class="car-driver normal">ทักษิณ คชเวช</div><div class="car-sub">คนขับ</div></div></div><div class="car-body"><div class="solo-tag">ไม่มีผู้โดยสาร</div></div></div>
+      <div class="car-card normal"><div class="car-head normal"><div class="car-num normal">10</div><div><div class="car-driver normal">พงศ์ธร สรรพนา</div><div class="car-sub">คนขับ</div></div></div><div class="car-body"><div class="pax-follow">👥 ผู้ติดตาม</div></div></div>
+      <div class="car-card normal"><div class="car-head normal"><div class="car-num normal">11</div><div><div class="car-driver normal">ศตพร ตันติสุขารมย์</div><div class="car-sub">คนขับ</div></div></div><div class="car-body"><div class="solo-tag">ไม่มีผู้โดยสาร</div></div></div>
+      <div class="car-card normal"><div class="car-head normal"><div class="car-num normal">12</div><div><div class="car-driver normal">Peerayut Paksatan</div><div class="car-sub">คนขับ</div></div></div><div class="car-body"><div class="pax-row">👤 สุพัตรา วังสาร</div></div></div>
+      <div class="car-card normal"><div class="car-head normal"><div class="car-num normal">13</div><div><div class="car-driver normal">ภฤศ กิตดาการ</div><div class="car-sub">คนขับ</div></div></div><div class="car-body"><div class="solo-tag">ไม่มีผู้โดยสาร</div></div></div>
+      <div class="car-card normal"><div class="car-head normal"><div class="car-num normal">14</div><div><div class="car-driver normal">ณัฐภูมิ ชาติสุข</div><div class="car-sub">คนขับ</div></div></div><div class="car-body"><div class="pax-follow">👥 ผู้ติดตาม</div></div></div>
+      <div class="car-card normal"><div class="car-head normal"><div class="car-num normal">15</div><div><div class="car-driver normal">สุมิตรา สายสังข์</div><div class="car-sub">คนขับ</div></div></div><div class="car-body"><div class="pax-follow">👥 ผู้ติดตาม</div></div></div>
+    </div>
+  </div>
+  <div class="section-block">
+    <div class="section-header" style="background:#7a4000;"><span class="section-icon">🏠</span><div><p class="section-title">ห้องพัก</p><p class="section-sub">4 โซน · 20 ห้อง</p></div></div>
+    <div class="rz"><span class="rzt" style="background:#fff3e0;color:#7a4000;border:2px solid #f4a43a;">🏠 มินิมอล (7 ห้อง)</span><div class="rg"><div class="rc" style="border-color:#f4a43a;"><div class="rh" style="background:#fff3e0;color:#7a4000;"><div class="rn" style="background:#f4a43a;color:#fff;">1</div>ห้อง 1</div><div class="rb"><div class="rm">พี่เก๊ก</div><div class="rt">ผู้ติดตาม</div></div></div><div class="rc" style="border-color:#f4a43a;"><div class="rh" style="background:#fff3e0;color:#7a4000;"><div class="rn" style="background:#f4a43a;color:#fff;">2</div>ห้อง 2</div><div class="rb"><div class="rm">พี่น้ำ</div><div class="rt">ผู้ติดตาม</div></div></div><div class="rc" style="border-color:#f4a43a;"><div class="rh" style="background:#fff3e0;color:#7a4000;"><div class="rn" style="background:#f4a43a;color:#fff;">3</div>ห้อง 3</div><div class="rb"><div class="rm">ดุจเดือน</div><div class="rm">บุ๊ค</div></div></div><div class="rc" style="border-color:#f4a43a;"><div class="rh" style="background:#fff3e0;color:#7a4000;"><div class="rn" style="background:#f4a43a;color:#fff;">4</div>ห้อง 4</div><div class="rb"><div class="rm">Peerayut</div><div class="rm">สุพัตรา</div></div></div><div class="rc" style="border-color:#f4a43a;"><div class="rh" style="background:#fff3e0;color:#7a4000;"><div class="rn" style="background:#f4a43a;color:#fff;">5</div>ห้อง 5</div><div class="rb"><div class="rm">พิพัฒน์</div><div class="rt">ผู้ติดตาม</div></div></div><div class="rc" style="border-color:#f4a43a;"><div class="rh" style="background:#fff3e0;color:#7a4000;"><div class="rn" style="background:#f4a43a;color:#fff;">6</div>ห้อง 6</div><div class="rb"><div class="rm">พงศ์ธร</div><div class="rt">ผู้ติดตาม</div></div></div><div class="rc" style="border-color:#f4a43a;"><div class="rh" style="background:#fff3e0;color:#7a4000;"><div class="rn" style="background:#f4a43a;color:#fff;">7</div>ห้อง 7</div><div class="rb"><div class="rm">ณัฐชยา</div><div class="rm">กนิษฐา</div></div></div></div></div>
+    <div class="rz"><span class="rzt" style="background:#e8f4fd;color:#0c3c6e;border:2px solid #378ADD;">🛏 นอดิก (6 ห้อง)</span><div class="rg"><div class="rc" style="border-color:#378ADD;"><div class="rh" style="background:#e8f4fd;color:#0c3c6e;"><div class="rn" style="background:#378ADD;color:#fff;">1</div>ห้อง 1</div><div class="rb"><div class="rm">ศุภณัฐ</div><div class="rm">ธนาธิป</div></div></div><div class="rc" style="border-color:#378ADD;"><div class="rh" style="background:#e8f4fd;color:#0c3c6e;"><div class="rn" style="background:#378ADD;color:#fff;">2</div>ห้อง 2</div><div class="rb"><div class="rm">อนุวัตร</div><div class="rm">อชิรวุฒิ</div></div></div><div class="rc" style="border-color:#378ADD;"><div class="rh" style="background:#e8f4fd;color:#0c3c6e;"><div class="rn" style="background:#378ADD;color:#fff;">3</div>ห้อง 3</div><div class="rb"><div class="rm">กิตติศักดิ์</div><div class="rm">ภฤศ</div></div></div><div class="rc" style="border-color:#378ADD;"><div class="rh" style="background:#e8f4fd;color:#0c3c6e;"><div class="rn" style="background:#378ADD;color:#fff;">4</div>ห้อง 4</div><div class="rb"><div class="rm">ทักษิณ</div><div class="rm">น้องใหม่</div></div></div><div class="rc" style="border-color:#378ADD;"><div class="rh" style="background:#e8f4fd;color:#0c3c6e;"><div class="rn" style="background:#378ADD;color:#fff;">5</div>ห้อง 5</div><div class="rb"><div class="rm">อานนท์</div><div class="rm">ศตพร</div></div></div><div class="rc" style="border-color:#378ADD;"><div class="rh" style="background:#e8f4fd;color:#0c3c6e;"><div class="rn" style="background:#378ADD;color:#fff;">6</div>ห้อง 6</div><div class="rb"><div class="rm">Attanai</div><div class="rm">ธวัชชัย</div></div></div></div></div>
+    <div class="rz"><span class="rzt" style="background:#fce8f3;color:#6b1040;border:2px solid #D4537E;">🌸 ญี่ปุ่น (6 ห้อง)</span><div class="rg"><div class="rc" style="border-color:#D4537E;"><div class="rh" style="background:#fce8f3;color:#6b1040;"><div class="rn" style="background:#D4537E;color:#fff;">1</div>ห้อง 1</div><div class="rb"><div class="rm">พี่โบว์</div><div class="rt">ผู้ติดตาม</div></div></div><div class="rc" style="border-color:#D4537E;"><div class="rh" style="background:#fce8f3;color:#6b1040;"><div class="rn" style="background:#D4537E;color:#fff;">2</div>ห้อง 2</div><div class="rb"><div class="rm">นิตยาพร</div><div class="rt">ผู้ติดตาม</div></div></div><div class="rc" style="border-color:#D4537E;"><div class="rh" style="background:#fce8f3;color:#6b1040;"><div class="rn" style="background:#D4537E;color:#fff;">3</div>ห้อง 3</div><div class="rb"><div class="rm">พี่อร</div><div class="rt">ผู้ติดตาม</div></div></div><div class="rc" style="border-color:#D4537E;"><div class="rh" style="background:#fce8f3;color:#6b1040;"><div class="rn" style="background:#D4537E;color:#fff;">4</div>ห้อง 4</div><div class="rb"><div class="rm">Pin-anong</div><div class="rt">ผู้ติดตาม</div></div></div><div class="rc" style="border-color:#D4537E;"><div class="rh" style="background:#fce8f3;color:#6b1040;"><div class="rn" style="background:#D4537E;color:#fff;">5</div>ห้อง 5</div><div class="rb"><div class="rm">คณิศร</div><div class="rt">ผู้ติดตาม</div></div></div><div class="rc" style="border-color:#D4537E;"><div class="rh" style="background:#fce8f3;color:#6b1040;"><div class="rn" style="background:#D4537E;color:#fff;">6</div>ห้อง 6</div><div class="rb"><div class="rm">ณัฐภูมิ</div><div class="rt">ผู้ติดตาม</div></div></div></div></div>
+    <div class="rz"><span class="rzt" style="background:#eaf3de;color:#274d09;border:2px solid #639922;">🏡 บ้านหลังใหญ่ 2 ห้อง</span><div class="rg"><div class="rc" style="border-color:#639922;"><div class="rh" style="background:#eaf3de;color:#274d09;"><div class="rn" style="background:#639922;color:#fff;">1</div>ห้อง 1</div><div class="rb"><div class="rm">สุมิตรา</div><div class="rt">ผู้ติดตาม</div></div></div></div></div>
+  </div>
+  <div class="section-block">
+    <div class="section-header" style="background:#3C3489;"><span class="section-icon">📋</span><div><p class="section-title">กำหนดการ</p><p class="section-sub">ตารางเวลากิจกรรมทั้งวัน</p></div></div>
+    <div class="tl">
+      <div class="tlr"><div class="tll"><div class="tld" style="background:#888;border-color:#888;"></div><div class="tls"></div></div><div class="tlc" style="border-color:#bbb;background:#f5f5f5;"><p class="tlt" style="color:#666;">🚗 เดินทาง</p><p class="tlti">Bangna Tower → Café</p><p class="tlsb">ระยะเวลาประมาณ 2 ชั่วโมง</p></div></div>
+      <div class="tlr"><div class="tll"><div class="tld" style="background:#0F6E56;border-color:#0F6E56;"></div><div class="tls"></div></div><div class="tlc" style="border-color:#0F6E56;background:#edfaf4;"><p class="tlt" style="color:#0F6E56;">11:00 – 11:15</p><p class="tlti">Check-in @ Oeimi Café</p><a href="https://maps.app.goo.gl/38YMACzPAUDnwKGL7" style="font-size:12px;text-decoration:none;font-weight:600;color:#0F6E56;">📍 ดูแผนที่</a></div></div>
+      <div class="tlr"><div class="tll"><div class="tld" style="background:#1D9E75;border-color:#1D9E75;"></div><div class="tls"></div></div><div class="tlc" style="border-color:#1D9E75;background:#edfaf4;"><p class="tlt" style="color:#1D9E75;">11:15 – 12:00</p><p class="tlti">กิจกรรมที่ 1</p><p class="tlsb">รายละเอียดกิจกรรม TBA</p></div></div>
+      <div class="tlr"><div class="tll"><div class="tld" style="background:#888;border-color:#888;"></div><div class="tls"></div></div><div class="tlc" style="border-color:#bbb;background:#f5f5f5;"><p class="tlt" style="color:#666;">🚗 เดินทาง</p><p class="tlti">Café → ที่พัก</p><p class="tlsb">ระยะเวลาประมาณ 1 ชั่วโมง</p></div></div>
+      <div class="tlr"><div class="tll"><div class="tld" style="background:#185FA5;border-color:#185FA5;"></div><div class="tls"></div></div><div class="tlc" style="border-color:#185FA5;background:#e6f0fa;"><p class="tlt" style="color:#185FA5;">14:00 – 14:10</p><p class="tlti">Check-in & Drop Bags · พี่นิด</p><a href="https://maps.app.goo.gl/7DQMh7jnbutGZ2AB7" style="font-size:12px;text-decoration:none;font-weight:600;color:#185FA5;">📍 ดูแผนที่</a></div></div>
+      <div class="tlr"><div class="tll"><div class="tld" style="background:#1D9E75;border-color:#1D9E75;"></div><div class="tls"></div></div><div class="tlc" style="border-color:#1D9E75;background:#edfaf4;"><p class="tlt" style="color:#1D9E75;">14:30 – 16:00</p><p class="tlti">กิจกรรมที่ 2</p><p class="tlsb">รายละเอียดกิจกรรม TBA</p></div></div>
+      <div class="tlr"><div class="tll"><div class="tld" style="background:#1D9E75;border-color:#1D9E75;"></div><div class="tls"></div></div><div class="tlc" style="border-color:#1D9E75;background:#edfaf4;"><p class="tlt" style="color:#1D9E75;">ต่อเนื่อง</p><p class="tlti">กิจกรรมที่ 3</p><p class="tlsb">รายละเอียดกิจกรรม TBA</p></div></div>
+      <div class="tlr"><div class="tll"><div class="tld" style="background:#993C1D;border-color:#993C1D;"></div></div><div class="tlc" style="border-color:#993C1D;background:#fde8e0;"><p class="tlt" style="color:#993C1D;">18:00 เป็นต้นไป</p><p class="tlti">🔥 Night Party — หมูกระทะ & Free Time</p><p class="tlsb" style="color:#712B13;">สังสรรค์และพักผ่อนตามอัธยาศัย</p></div></div>
+    </div>
+  </div>
+  <div class="footer">หากมีข้อสงสัยเพิ่มเติม สามารถติดต่อผู้จัดงานได้โดยตรง &nbsp;·&nbsp; ขอให้ทุกคนสนุกกับกิจกรรม 🎉</div>
+</div>
+</body>
+</html>
